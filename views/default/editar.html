@@ -1,0 +1,53 @@
+{{extend 'layoutui.html'}}
+
+<div class="ui grid">
+	<div class="sixteen wide column" style="margin-bottom: 1em;">
+		{{=cabecalho}}
+	</div>
+</div>
+
+{{=form.custom.begin}}
+  <div class="four wide field">
+  	{{form.elements('#camisetas_horario')}}
+    {{=form.custom.widget.horario}}
+  </div>
+  <div class="four wide field">
+  	{{form.elements('#camisetas_nome')}}
+    {{=form.custom.widget.nome}}
+  </div>
+  <div class="four wide field">
+  	{{form.elements('#camisetas_tipo')}}
+    {{=form.custom.widget.tipo}}
+  </div>
+  <div class="four wide field">
+  	{{form.elements('#camisetas_tamanho')}}
+    {{=form.custom.widget.tamanho}}
+  </div>
+  <div class="four wide field">
+  	{{form.elements('#camisetas_valor')}}
+    {{=form.custom.widget.valor}}
+  </div>
+  <div class="four wide field">
+	{{form.elements('#camisetas_pago')[0]['_class']='ui radio checkbox'}}
+	{{=form.custom.widget.pago}}
+  </div>
+<!--   <button class="ui button" type="submit">Salvar</button>
+  <a href="{{=URL('pedidos')}}" class="ui button"><i class="arrow left icon"></i>Voltar</a>
+ -->
+  <div class="ui vertical animated button" tabindex="0">
+  <div class="hidden content"><i><a href="{{=URL('pedidos')}}" style="color: rgb(40,40,40)">Voltar</a></i></div>
+  <div class="visible content">
+    <i class="arrow left icon"></i>
+  </div>
+  </div>
+
+  <div class="ui vertical animated button" tabindex="0">
+  <div class="hidden content"><button class="ui button" type="submit" style="background-color: #CACBCD; color: rgb(40,40,40); padding: 0em;"><i>Salvar</i></button></div>
+  <div class="visible content">
+    <i class="save icon"></i>
+  </div>
+  </div>
+
+
+{{=form.custom.end}}
+

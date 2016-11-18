@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{{=response.title}}</title>
+	<link rel="stylesheet" href="">
+
+	<!-- Semanticu UI em "static" -->
+	<link rel="stylesheet" type="text/css" href="{{=URL('static', 'Semantic-UI-CSS-master/semantic.min.css')}}">
+	<script src="{{=URL('static', 'Semantic-UI-CSS-master/semantic.min.js')}}"></script>
+
+	<!-- Semantic-UI CDN -->
+<!-- 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/components/icon.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/components/list.min.css">
+	<link rel="stylesheet" href="{{=URL('static', 'Semantic-UI-CSS-master/components/table.min.css')}}">
+	<link rel="stylesheet" href="{{=URL('static', 'Semantic-UI-CSS-master/components/checkbox.min.css')}}">
+ -->
+
+ 	<!-- <link rel="stylesheet" href="{{=URL('static', 'Semantic-UI-CSS-master/components/tab.min.css')}}"> -->
+	<!-- <link rel="stylesheet" href="{{=URL('static', 'Semantic-UI-CSS-master/components/tab.min.js')}}"> -->
+
+	<script type="text/javascript">
+		 $('.tabular.menu .item').tab();
+	</script>
+
+</head>
+<body>
+	<div class="ui grid">
+			<div class="sixteen wide column" style="padding: 2em;">
+				<img class="ui floated small image" src="{{=URL('static', 'images/logo-grupy.png')}}">
+				{{include}}
+			</div>
+	</div>
+</body>
+</html>

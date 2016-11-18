@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{{=response.title}}</title>
+  <link rel="stylesheet" href="">
+  <link rel="stylesheet" type="text/css" href="{{=URL('static', 'Semantic-UI-CSS-master/semantic.min.css')}}">
+  <script src="{{=URL('static', 'Semantic-UI-CSS-master/semantic.min.js')}}"></script>
+
+    <style>
+    body{
+      
+      background: url("{{=URL('static', 'images/grupy.jpg')}}")  no-repeat center;
+      background-size: cover;
+      /*display: flex;*/
+      /*align-items: center;*/
+      justify-content: center;
+    }
+
+  </style> 
+</head>
+<body>
+  
+
+<div class="ui vertical animated button" tabindex="0">
+  <div class="hidden content"  style="font-size: 2em;"><a href="{{=URL('pedidos')}}" style="color: rgb(40,40,40)"><i>Entrar</i></a></div>
+    <div class="visible content">
+
+    <img class="ui small image" src="{{=URL('static', 'images/logo-grupy.png')}}">
+  </div>
+</div>
+
+</body>
+</html>

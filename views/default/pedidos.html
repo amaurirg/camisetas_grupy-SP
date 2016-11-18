@@ -1,0 +1,68 @@
+{{extend 'layoutui.html'}}
+
+<h1 style="margin-left: 17em;">Pedidos de Camisetas Grupy-SP</h1>
+
+<div class="ui top attached tabular menu">
+  <div class="active item" data-tab="first">Geral</div>
+  <a class="item" data-tab="second">Camisetas</a>
+</div>
+<div class="ui bottom attached active tab segment" data-tab="first">
+	<table class="ui selectable large table">
+	    <thead >
+	    	<tr>
+	    		<th>Horário</th>
+	    		<th>Nome</th>
+	    		<th>Tipo Escolhido</th>
+	    		<th>Tamanho</th>
+	    		<th>Valor</th>
+	    		<th>Pago</th>
+	    	</tr>
+	    </thead>
+	    <tbody>
+	    	{{for dado in geral:}}
+	    	<tr>
+	    		<td><a href="{{=URL('editar', args=dado.id)}}" style="color: black;">{{=dado.horario}}</a></td>
+	    		<td><a href="{{=URL('editar', args=dado.id)}}" style="color: black;">{{=dado.nome}}</a></td>
+	    		<td><a href="{{=URL('editar', args=dado.id)}}" style="color: black;">{{=dado.tipo}}</a></td>
+	    		<td><a href="{{=URL('editar', args=dado.id)}}" style="color: black;">{{=dado.tamanho}}</a></td>
+	    		<td><a href="{{=URL('editar', args=dado.id)}}" style="color: black;">R$ {{=dado.valor.replace('.',',')}}</a></td>
+	    		<td><a href="{{=URL('editar', args=dado.id)}}" style="color: black;">{{if dado.pago=='SIM':}}<i class="large green checkmark icon"></i>
+	    		{{else:}}<i class="large red remove icon"></i>{{pass}}</a></td>
+	    	</tr>
+	    	{{pass}}
+	    </tbody>
+	    <tfoot>
+	      <tr><th>Valor a Receber: R$ {{=str(a_receber).replace('.',',')}}</th>
+	      <th></th>
+	      <th>{{=db(CG).count()}} Camisetas</th>
+	      <th></th>
+	      <th>
+	      	R$ {{=str(soma_valores).replace('.',',')}}
+	      </th>
+	      <th>{{=db(CG.pago=='SIM').count()}} Pagos</th>
+	    </tr></tfoot>
+	  </table>
+</div>
+
+
+<div class="ui bottom attached tab segment" data-tab="second">
+	<table class="ui selectable large table">
+	    <thead >
+	    	<tr><th colspan="3" style="text-align: center;">Total de Camisetas</th></tr>
+	    	<tr>
+	    		<th>Tipo</th>
+	    		<th>Tamanho</th>
+	    		<th>Quantidade</th>
+	    	</tr>
+	    </thead>
+	    <tbody>
+			{{for item in qtde_tam:}}
+			<tr>
+				<td>{{=item[0]}}</td>
+				<td>{{=item[1]}}</td>
+				<td>{{=item[2]}}</td>
+			</tr>
+			{{pass}}
+	</table>
+</div>
+
