@@ -3,7 +3,7 @@
 <h1 style="margin-left: 17em;">Pedidos de Camisetas Grupy-SP</h1>
 
 <div class="ui top attached tabular menu">
-  <div class="active item" data-tab="first">Geral</div>
+  <a class="active item" data-tab="first">Geral</a>
   <a class="item" data-tab="second">Camisetas</a>
 </div>
 <div class="ui bottom attached active tab segment" data-tab="first">
@@ -63,6 +63,34 @@
 				<td>{{=item[2]}}</td>
 			</tr>
 			{{pass}}
+		</tbody>
 	</table>
 </div>
 
+<div class="ui pagination menu">
+  <a class="active item">
+    1
+  </a>
+  <div class="disabled item">
+    ...
+  </div>
+  <a class="item">
+    10
+  </a>
+  <a class="item">
+    11
+  </a>
+  <a class="item">
+    12
+  </a>
+</div>
+
+
+<script type="text/javascript">
+jQuery('.item').click(function() {
+	$('.segment').toggleClass("active");
+  	$('.item').toggleClass("active");
+  	
+  return false;
+});
+</script>

@@ -5,10 +5,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>{{=response.title}}</title>
 	<link rel="stylesheet" href="">
-
+	
 	<!-- Semanticu UI em "static" -->
 	<link rel="stylesheet" type="text/css" href="{{=URL('static', 'Semantic-UI-CSS-master/semantic.min.css')}}">
 	<script src="{{=URL('static', 'Semantic-UI-CSS-master/semantic.min.js')}}"></script>
+	<script src="{{=URL('static','js/jquery.js')}}"></script>
 
 	<!-- Semantic-UI CDN -->
 <!-- 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/components/icon.min.css">
@@ -21,7 +22,7 @@
 	<!-- <link rel="stylesheet" href="{{=URL('static', 'Semantic-UI-CSS-master/components/tab.min.js')}}"> -->
 
 	<script type="text/javascript">
-		 $('.tabular.menu .item').tab();
+		 (function(){$('.tabular.menu .item').tab();});
 	</script>
 
 </head>
