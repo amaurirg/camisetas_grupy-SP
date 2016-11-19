@@ -1,0 +1,29 @@
+#principal{
+	padding: 1.8em;
+}
+#princ-editar{
+	margin-bottom: 1em;
+}
+.bt-h{
+	border-radius: 30px;
+	border: 1px solid #999;
+	font-weight: lighter;
+	opacity: 0.6;
+}
+.bt-h:hover {
+  color: #000;
+  opacity: 1;
+  text-decoration: none;
+}
+a{
+	color: rgb(40,40,40);
+}
+a:hover{
+	color: rgb(40,40,40);
+	text-decoration: none;
+}
+#btn-salvar{
+	background-color: #CACBCD; 
+	color: rgb(40,40,40); 
+	padding: 0em;
+}

@@ -1,6 +1,7 @@
 {{extend 'layoutui.html'}}
 
-<h1 style="margin-left: 17em;">Pedidos de Camisetas Grupy-SP</h1>
+
+<h1 class="ui center aligned header">Pedidos de Camisetas Grupy-SP</h1>
 
 <div class="ui top attached tabular menu">
   <a class="active item" data-tab="first">Geral</a>
@@ -27,13 +28,18 @@
 	    <tbody>
 	    	{{for dado in geral:}}
 	    	<tr>
-	    		<td><a href="{{=URL('editar', args=dado.id)}}" style="color: black;">{{=dado.horario}}</a></td>
-	    		<td><a href="{{=URL('editar', args=dado.id)}}" style="color: black;">{{=dado.nome}}</a></td>
-	    		<td><a href="{{=URL('editar', args=dado.id)}}" style="color: black;">{{=dado.tipo}}</a></td>
-	    		<td><a href="{{=URL('editar', args=dado.id)}}" style="color: black;">{{=dado.tamanho}}</a></td>
-	    		<td><a href="{{=URL('editar', args=dado.id)}}" style="color: black;">R$ {{=dado.valor.replace('.',',')}}</a></td>
-	    		<td><a href="{{=URL('editar', args=dado.id)}}" style="color: black;">{{if dado.pago=='SIM':}}<i class="large green checkmark icon"></i>
-	    		{{else:}}<i class="large red remove icon"></i>{{pass}}</a></td>
+	    		<td><a href="{{=URL('editar', args=dado.id)}}">{{=dado.horario}}</a></td>
+	    		<td><a href="{{=URL('editar', args=dado.id)}}">{{=dado.nome}}</a></td>
+	    		<td><a href="{{=URL('editar', args=dado.id)}}">{{=dado.tipo}}</a></td>
+	    		<td><a href="{{=URL('editar', args=dado.id)}}">{{=dado.tamanho}}</a></td>
+	    		<td><a href="{{=URL('editar', args=dado.id)}}">R$ {{=dado.valor.replace('.',',')}}</a></td>
+	    		<td><a href="{{=URL('editar', args=dado.id)}}">
+	    			{{if dado.pago=='SIM':}}
+	    			<i class="large green checkmark icon"></i>
+	    			{{else:}}
+	    			<i class="large red remove icon"></i>
+	    			{{pass}}
+	    			</a></td>
 	    	</tr>
 	    	{{pass}}
 	    </tbody>
@@ -54,7 +60,7 @@
 <div class="ui bottom attached tab segment" data-tab="second">
 	<table class="ui selectable large table">
 	    <thead >
-	    	<tr><th colspan="3" style="text-align: center;">Total de Camisetas</th></tr>
+	    	<tr><th colspan="3" style="text-align: center;">TOTAL DE CAMISETAS</th></tr>
 	    	<tr>
 	    		<th>Tipo</th>
 	    		<th>Tamanho</th>
@@ -72,8 +78,6 @@
 		</tbody>
 	</table>
 </div>
-
-
 
 <script type="text/javascript">
 jQuery('.item').click(function() {

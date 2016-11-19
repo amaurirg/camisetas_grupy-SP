@@ -4,54 +4,22 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>{{=response.title}}</title>
-	<link rel="stylesheet" href="">
 	
-	<!-- Semanticu UI em "static" -->
 	<link rel="stylesheet" type="text/css" href="{{=URL('static', 'Semantic-UI-CSS-master/semantic.min.css')}}">
+	<link rel="stylesheet" href="{{=URL('static', 'css/estilo.css')}}">
 	<script src="{{=URL('static', 'Semantic-UI-CSS-master/semantic.min.js')}}"></script>
 	<script src="{{=URL('static','js/jquery.js')}}"></script>
-
-	<!-- Semantic-UI CDN -->
-<!-- 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/components/icon.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/components/list.min.css">
-	<link rel="stylesheet" href="{{=URL('static', 'Semantic-UI-CSS-master/components/table.min.css')}}">
-	<link rel="stylesheet" href="{{=URL('static', 'Semantic-UI-CSS-master/components/checkbox.min.css')}}">
- -->
-
- 	<!-- <link rel="stylesheet" href="{{=URL('static', 'Semantic-UI-CSS-master/components/tab.min.css')}}"> -->
-	<!-- <link rel="stylesheet" href="{{=URL('static', 'Semantic-UI-CSS-master/components/tab.min.js')}}"> -->
 
 	<script type="text/javascript">
 		 (function(){$('.tabular.menu .item').tab();});
 	</script>
-	
-	<style>
-		.bt-h{
-			border-radius: 30px;
-			border: 1px solid #999;
-			font-weight: lighter;
-			opacity: 0.6;
-		}
-		.bt-h:hover {
-		  color: #000;
-		  opacity: 1;
-		  text-decoration: none;
-		}
-		.bt-l{
-			border-radius: 20px;
-			border: 1px solid #999;
-			font-weight: lighter;
-			opacity: 0.6;
-		}
-	</style>
-
 </head>
 <body>
 	<div class="ui grid">
-			<div class="sixteen wide column" style="padding: 1.8em;">
-				<img class="ui floated small image" src="{{=URL('static', 'images/logo-grupy.png')}}">
-				{{include}}
-			</div>
+		<div id="principal" class="sixteen wide column">
+			<img class="ui floated small image" src="{{=URL('static', 'images/logo-grupy.png')}}">
+			{{include}}
+		</div>
 	</div>
 </body>
 </html>

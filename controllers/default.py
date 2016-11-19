@@ -51,20 +51,10 @@ def atualiza_tabela_camisetas():
     todos = db(CG.id>0).update(pago='NÃO')
     redirect(URL('pedidos'))
 
-"""
-    if request.vars.camera and not request.vars.page:
-        redirect(URL('index', vars={'camera':request.vars.camera}))
-    if not request.vars.page:
-        redirect(URL(vars={'page':1}))
-    else:
-        page = int(request.vars.page)
-    start = (page-1)*5
-    end = page*5
-    camera = db(CAM).select(orderby=CAM.fabricante, limitby=(start,end))
-"""
+
 def pedidos():
     """ Seleciona todos os registros, separa os pagos e nao_pagos, soma valores pagos """
-    # A função 'Decimal' com o quantize retornam o número correto de casas decimais e 'sum' soma os valores
+    # Paginação
     if not request.vars.page:
         redirect(URL(vars={'page':1}))
     else:
@@ -72,14 +62,12 @@ def pedidos():
     start = (page-1)*7
     end = page*7
     geral = db(CG).select(orderby=db.camisetas.nome, limitby=(start,end))
-    
+    # A função 'Decimal' com o quantize retornam o número correto de casas decimais e 'sum' soma os valores
     soma_valores = sum([Decimal(soma.valor).quantize(Decimal('1.00')) for soma in db(CG.pago).select(CG.valor)])
     a_receber = sum([Decimal(soma.valor).quantize(Decimal('1.00')) for soma in db(CG.pago=='NÃO').select(CG.valor)])
     # dados = db(CG).select(CG.tipo,CG.tamanho, CG.valor, groupby=CG.tamanho)
     pagos = db(CG.pago=='SIM').select()
     nao_pagos = db(CG.pago=='NÃO').select()
-    # com executesql funciona
-    # dados = db.executesql("SELECT tipo, tamanho, count(tamanho) FROM camisetas group by tipo, tamanho")
     count = db.camisetas.id.count()
     qtde_tam = [[row.camisetas.tipo, row.camisetas.tamanho, row[count]] for row in 
                 db(db.camisetas.id).select(db.camisetas.tipo, db.camisetas.tamanho, 
@@ -87,9 +75,7 @@ def pedidos():
 
     return dict(geral=geral, pagos=pagos, nao_pagos=nao_pagos, 
                 qtde_tam=qtde_tam, soma_valores=soma_valores, a_receber=a_receber)
-    
-#select nacionalidade, count(*) from gafanhotos where sexo = 'M' 
-#and nacionalidade != 'Brasil' group by nacionalidade
+
 
 def editar():
     pessoa = db(CG.id == request.args(0)).select().first()
