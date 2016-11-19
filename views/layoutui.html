@@ -24,11 +24,31 @@
 	<script type="text/javascript">
 		 (function(){$('.tabular.menu .item').tab();});
 	</script>
+	
+	<style>
+		.bt-h{
+			border-radius: 30px;
+			border: 1px solid #999;
+			font-weight: lighter;
+			opacity: 0.6;
+		}
+		.bt-h:hover {
+		  color: #000;
+		  opacity: 1;
+		  text-decoration: none;
+		}
+		.bt-l{
+			border-radius: 20px;
+			border: 1px solid #999;
+			font-weight: lighter;
+			opacity: 0.6;
+		}
+	</style>
 
 </head>
 <body>
 	<div class="ui grid">
-			<div class="sixteen wide column" style="padding: 2em;">
+			<div class="sixteen wide column" style="padding: 1.8em;">
 				<img class="ui floated small image" src="{{=URL('static', 'images/logo-grupy.png')}}">
 				{{include}}
 			</div>

@@ -5,7 +5,13 @@
 <div class="ui top attached tabular menu">
   <a class="active item" data-tab="first">Geral</a>
   <a class="item" data-tab="second">Camisetas</a>
+
+	<div class="right floated column">
+    {{if not int(request.vars.page)<=1:}}<a href="{{=URL(vars={'camera':request.vars.camera, 'page':int(request.vars.page)-1})}}" class="ui blue basic button bt-h"><i class="left chevron icon"></i></a>{{pass}}
+    {{if not int(request.vars.page) >= len(geral):}}<a href="{{=URL(vars={'camera':request.vars.camera, 'page':int(request.vars.page)+1})}}" class="ui blue basic button bt-h"><i class="right chevron icon"></i></a>{{pass}}
+	</div>
 </div>
+
 <div class="ui bottom attached active tab segment" data-tab="first">
 	<table class="ui selectable large table">
 	    <thead >
@@ -67,23 +73,6 @@
 	</table>
 </div>
 
-<div class="ui pagination menu">
-  <a class="active item">
-    1
-  </a>
-  <div class="disabled item">
-    ...
-  </div>
-  <a class="item">
-    10
-  </a>
-  <a class="item">
-    11
-  </a>
-  <a class="item">
-    12
-  </a>
-</div>
 
 
 <script type="text/javascript">
