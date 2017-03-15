@@ -72,7 +72,7 @@ def pedidos():
     qtde_tam = [[row.camisetas.tipo, row.camisetas.tamanho, row[count]] for row in 
                 db(db.camisetas.id).select(db.camisetas.tipo, db.camisetas.tamanho, 
                 count, groupby=(db.camisetas.tipo, db.camisetas.tamanho), orderby=db.camisetas.tipo)]
-
+    # print qtde_tam
     return dict(geral=geral, pagos=pagos, nao_pagos=nao_pagos, 
                 qtde_tam=qtde_tam, soma_valores=soma_valores, a_receber=a_receber)
 
